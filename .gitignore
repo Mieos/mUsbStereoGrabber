@@ -1,0 +1,9 @@
+#Build
+build
+#Swap files
+*.swp
+*.swo
+.cpp~
+*.autosave
+*.user
+
