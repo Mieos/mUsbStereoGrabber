@@ -2,7 +2,13 @@
 cmake_minimum_required(VERSION 2.8)
 
 #Project Name
-project(Mieos-Project-Organizer-Example)
+project(mUsbStereoGrabber)
+
+##
+#External packages
+##
+add_subdirectory(external)
+
 
 #Use C++11
 set(CMAKE_CXX_STANDARD 11)
@@ -23,25 +29,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 #Srcs#
 ######
 
-##
-#Pkg config allow you to find unconventionnal packages : uncomment the next line if you need it
-##
-#find_package(PkgConfig REQUIRED)
-
-##
-#Other packages you want to include with the classic method
-##
-#find_package(myPackage REQUIRED)
-
-##
-#Other packages you want to include with PkgConfig
-##
-#pkg_search_module(MyPackage REQUIRED myPackagev42)
-
-##
-#External packages
-##
-add_subdirectory(external)
+find_package(OpenCV REQUIRED)
 
 ##########
 #Includes#
