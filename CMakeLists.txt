@@ -12,14 +12,7 @@ add_subdirectory(external)
 
 #Use C++11
 set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
-
-#Other Flags you want to add to the project
-#For instance here, allow pthread
-#set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
-
-#Options
-#option(myOption "myOption" ON)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11  -pthread")
 
 ##########
 #Packages#
@@ -46,6 +39,7 @@ find_package(OpenCV REQUIRED)
 #External packages
 ##
 include_directories(
+   include
    external/externalLibraryExample/include
    )
 
@@ -75,4 +69,4 @@ set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
 add_subdirectory(src/internalLibraryExample)
 include_directories(include/internalLibraryExample)
 #Tests
-add_subdirectory(src/tests)
+add_subdirectory(src)
