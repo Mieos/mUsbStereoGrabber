@@ -8,7 +8,7 @@ int main(int argc, char *argv[]){
 
    std::cout << std::endl << "Test Stereo Camea USB:" << std::endl << std::endl;
 
-   UsbOpencvStereoGrabber grabber;
+   UsbOpencvStereoGrabber grabber(20);
 
    bool endAsk=false;
 
