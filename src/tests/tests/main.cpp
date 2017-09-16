@@ -1,10 +1,9 @@
 #include <iostream>
 #include <string>
 #include <unistd.h>
-
-
 #include "UsbOpencvStereoGrabber.hpp"
 
+//Test Stereo Grabber
 int main(int argc, char *argv[]){
 
    std::cout << std::endl << "Test Stereo Camea USB:" << std::endl << std::endl;
@@ -31,9 +30,7 @@ int main(int argc, char *argv[]){
 
    }
 
-   //End
-   std::cout << std::endl;
-   std::cout << "Ending.. " << std::endl << std::endl;
+   std::cout << std::endl << "Ending.. " << std::endl << std::endl;
 
    return 0;
 }

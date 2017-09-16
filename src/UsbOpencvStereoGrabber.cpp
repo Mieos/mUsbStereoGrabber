@@ -25,7 +25,7 @@ void UsbOpencvStereoGrabber::runLeftThread(UsbOpencvStereoGrabber* context){
 
    //Check if the camera is connected
    if(!capLeft.isOpened()){  // check if we succeeded
-      std::cout << "Error opening USB camera" << std::endl;
+      std::cout << "Error opening USB camera (left)" << std::endl;
       context->endAsked=true;
    }
 
@@ -37,7 +37,6 @@ void UsbOpencvStereoGrabber::runLeftThread(UsbOpencvStereoGrabber* context){
 
    //Main loop
    while(!context->endAsked){
-      usleep(100);
       cv::Mat frame;
       capLeft >> frame;
       context->lmutex.lock();
@@ -60,7 +59,7 @@ void UsbOpencvStereoGrabber::runRightThread(UsbOpencvStereoGrabber* context){
    capRight.set(CV_CAP_PROP_FPS,context->fpsUsed);
 
    if(!capRight.isOpened()){  // check if we succeeded
-      std::cout << "Error opening USB camera" << std::endl;
+      std::cout << "Error opening USB camera (right)" << std::endl;
       context->endAsked=true;
    }
 
@@ -75,7 +74,6 @@ void UsbOpencvStereoGrabber::runRightThread(UsbOpencvStereoGrabber* context){
 
    //Main loop
    while(!context->endAsked){
-      usleep(100);
       cv::Mat frame;
       capRight >> frame;
       context->rmutex.lock();
